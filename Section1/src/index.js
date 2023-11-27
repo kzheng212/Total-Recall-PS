@@ -319,20 +319,30 @@ console.log(maxOfThree(6, 9, 1));
 
 // 4H. printLongestWord
 
+// function printLongestWord(wordArray) {
+//   let longestWord = "";
+//   for (
+//     let currIndex = 0, nextIndex = 1;
+//     nextIndex < wordArray.length;
+//     nextIndex++
+//   ) {
+//     if (wordArray[currIndex].length < wordArray[nextIndex].length) {
+//       longestWord = wordArray[nextIndex];
+//       currIndex = nextIndex;
+//     } else {
+//       longestWord = wordArray[currIndex];
+//     }
+//   }
+//   return longestWord;
+// }
+
 function printLongestWord(wordArray) {
   let longestWord = "";
-  for (
-    let currIndex = 0, nextIndex = 1;
-    nextIndex < wordArray.length;
-    nextIndex++
-  ) {
-    if (wordArray[currIndex].length < wordArray[nextIndex].length) {
-      longestWord = wordArray[nextIndex];
-      currIndex = nextIndex;
-    } else {
-      longestWord = wordArray[currIndex];
+  wordArray.forEach((element) => {
+    if (longestWord.length < element.length) {
+      longestWord = element;
     }
-  }
+  });
   return longestWord;
 }
 
